@@ -1,0 +1,11 @@
+#!/bin/bash -eux
+
+export GOOS=linux
+export GOARCH=386
+
+ROOT_PATH=$GOPATH/src/github.com/nickwei84/sms-resource
+mkdir -p $ROOT_PATH/docker/bin
+
+go build -v -o $ROOT_PATH/docker/bin/check $ROOT_PATH/cmds/check/main.go
+go build -v -o $ROOT_PATH/docker/bin/in $ROOT_PATH/cmds/in/main.go
+go build -v -o $ROOT_PATH/docker/bin/out $ROOT_PATH/cmds/out/main.go
