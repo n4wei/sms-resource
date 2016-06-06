@@ -36,7 +36,7 @@ var _ = Describe("Out", func() {
 				session, err := gexec.Start(cmd, GinkgoWriter, GinkgoWriter)
 				Expect(err).NotTo(HaveOccurred())
 				Eventually(session).Should(gexec.Exit(1))
-				Eventually(session.Err).Should(gbytes.Say("Error parsing stdin as JSON: unexpected end of JSON input"))
+				Eventually(session.Err).Should(gbytes.Say("error parsing stdin as JSON: unexpected end of JSON input"))
 				Eventually(session.Out).Should(gbytes.Say(""))
 			})
 		})
@@ -51,7 +51,7 @@ var _ = Describe("Out", func() {
 				session, err := gexec.Start(cmd, GinkgoWriter, GinkgoWriter)
 				Expect(err).NotTo(HaveOccurred())
 				Eventually(session).Should(gexec.Exit(1))
-				Eventually(session.Err).Should(gbytes.Say("Error parsing stdin as JSON: invalid character 'm' looking for beginning of object key string"))
+				Eventually(session.Err).Should(gbytes.Say("error parsing stdin as JSON: invalid character 'm' looking for beginning of object key string"))
 				Eventually(session.Out).Should(gbytes.Say(""))
 			})
 		})
@@ -76,17 +76,9 @@ var _ = Describe("Out", func() {
 				session, err := gexec.Start(cmd, GinkgoWriter, GinkgoWriter)
 				Expect(err).NotTo(HaveOccurred())
 				Eventually(session).Should(gexec.Exit(1))
-				Eventually(session.Err).Should(gbytes.Say("Error: source.aws_access_key_id from stdin is either empty or missing"))
+				Eventually(session.Err).Should(gbytes.Say("source.aws_access_key_id from stdin is either empty or missing"))
 				Eventually(session.Out).Should(gbytes.Say(""))
 			})
-		})
-	})
-
-	Context("when stdin input is valid", func() {
-		XIt("should run the application logic", func() {
-		})
-
-		XIt("should output the version to stdout", func() {
 		})
 	})
 })

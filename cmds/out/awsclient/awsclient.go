@@ -25,7 +25,7 @@ func (s AWSClient) CreateTopic(topic string) (string, error) {
 		Name: aws.String(topic),
 	})
 	if err != nil {
-		return "", fmt.Errorf("Error creating topic: %v", err)
+		return "", fmt.Errorf("error creating topic: %v", err)
 	}
 
 	topicArn := *createTopicResp.TopicArn
@@ -36,7 +36,7 @@ func (s AWSClient) CreateTopic(topic string) (string, error) {
 		AttributeValue: aws.String(topic),
 	})
 	if err != nil {
-		return "", fmt.Errorf("Error creating SMS display name for topic: %v", err)
+		return "", fmt.Errorf("error creating SMS display name for topic: %v", err)
 	}
 
 	return topicArn, nil
@@ -50,7 +50,7 @@ func (s AWSClient) GetExistingSubscribers(topicArn string) ([]string, error) {
 		TopicArn: aws.String(topicArn),
 	})
 	if err != nil {
-		return existingSubscribers, fmt.Errorf("Error getting list of existing subscribers: %v", err)
+		return existingSubscribers, fmt.Errorf("error getting list of existing subscribers: %v", err)
 	}
 
 	subscriptions := listSubscriptionsByTopicResp.Subscriptions
@@ -74,7 +74,7 @@ func (s AWSClient) CreateNewSubscriptions(topicArn string, newSubscribers []stri
 			Endpoint: aws.String(subscriber),
 		})
 		if err != nil {
-			return fmt.Errorf("Error subscribing %s: %v", subscriber, err)
+			return fmt.Errorf("error subscribing %s: %v", subscriber, err)
 		}
 	}
 
@@ -87,7 +87,7 @@ func (s AWSClient) PublishMessage(topicArn string, message string) error {
 		Message:  aws.String(message),
 	})
 	if err != nil {
-		return fmt.Errorf("Error publishing message: %v", err)
+		return fmt.Errorf("error publishing message: %v", err)
 	}
 
 	return nil

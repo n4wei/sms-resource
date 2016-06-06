@@ -52,12 +52,12 @@ func exitWithErr(err interface{}) {
 func getStdinInput(config *models.SMSConfig) error {
 	stdinData, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
-		return fmt.Errorf("Error reading from stdin: %v", err)
+		return fmt.Errorf("error reading from stdin: %v", err)
 	}
 
 	err = json.Unmarshal(stdinData, config)
 	if err != nil {
-		return fmt.Errorf("Error parsing stdin as JSON: %v", err)
+		return fmt.Errorf("error parsing stdin as JSON: %v", err)
 	}
 
 	return nil
@@ -73,7 +73,7 @@ func generateStdoutOutput() ([]byte, error) {
 
 	stdoutOutput, err := json.Marshal(output)
 	if err != nil {
-		return nil, fmt.Errorf("Error marshalling output for stdout: %v", err)
+		return nil, fmt.Errorf("error marshalling output for stdout: %v", err)
 	}
 
 	return stdoutOutput, nil

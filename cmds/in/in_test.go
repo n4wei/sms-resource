@@ -36,7 +36,7 @@ var _ = Describe("In", func() {
 
 		It("should output an error to stderr", func() {
 			Eventually(session).Should(gexec.Exit(1))
-			Eventually(session.Err).Should(gbytes.Say("Error unmarshalling JSON: unexpected end of JSON input"))
+			Eventually(session.Err).Should(gbytes.Say("error unmarshalling JSON: unexpected end of JSON input"))
 			Eventually(session.Out).Should(gbytes.Say(""))
 		})
 	})
@@ -59,7 +59,7 @@ var _ = Describe("In", func() {
 
 		It("should output an error to stderr", func() {
 			Eventually(session).Should(gexec.Exit(1))
-			Eventually(session.Err).Should(gbytes.Say("Error: version key pair is missing from stdin"))
+			Eventually(session.Err).Should(gbytes.Say("error: version key pair is missing from stdin"))
 			Eventually(session.Out).Should(gbytes.Say(""))
 		})
 	})
