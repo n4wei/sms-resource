@@ -10,7 +10,18 @@ Sends SMS messages using AWS SNS (Simple Notification Service).
 
 ### Example
 
+The SMS resource is available on Dockerhub at [`nwei/sms-concourse-resource`](https://hub.docker.com/r/nwei/sms-concourse-resource/)
+
+To use this in your concourse pipeline:
+
 ```yaml
+resource_types:
+- name: sms-resource
+  type: docker-image
+  source:
+    repository: nwei/sms-concourse-resource
+
+resources:
 - name: sms
   type: sms-resource
   source:
