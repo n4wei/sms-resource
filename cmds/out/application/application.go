@@ -40,12 +40,7 @@ func (a Application) Run() error {
 		return err
 	}
 
-	err = a.client.PublishMessage(topicArn, a.config.Params.Message)
-	if err != nil {
-		return err
-	}
-
-	return nil
+	return a.client.PublishMessage(topicArn, a.config.Params.Message)
 }
 
 func findNewSubscribers(existingSubscribers []string, subscribersFromInput []string) []string {
