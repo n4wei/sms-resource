@@ -47,6 +47,12 @@ resources:
 
 Subscribe phone number(s) provided in `subscribers` to a topic, and publishes the message provided in `message` to that topic.
 
+**NOTE** The first time a phone number is subscribed to a topic, a confirmation text is needed from that phone to complete the opt-in subscription process. For example the following message is sent in the opt-in process:
+
+```
+Would you like to reveive messages from CONCOURSE? Reply YES CONCOURSE to receive messages. Reply HELP or STOP. Msg&data rates may apply.
+```
+
 #### Parameters
 
 - `subscribers`: *Required.* A list of phone numbers to subscribe to the topic.
