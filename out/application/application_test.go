@@ -1,9 +1,9 @@
 package application_test
 
 import (
-	"github.com/nickwei84/sms-resource/cmds/out/application"
-	"github.com/nickwei84/sms-resource/cmds/out/application/applicationfakes"
-	"github.com/nickwei84/sms-resource/cmds/out/models"
+	"github.com/nickwei84/sms-resource/out/application"
+	"github.com/nickwei84/sms-resource/out/application/applicationfakes"
+	"github.com/nickwei84/sms-resource/out/models"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

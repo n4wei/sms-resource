@@ -1,7 +1,7 @@
 package models_test
 
 import (
-	"github.com/nickwei84/sms-resource/cmds/out/models"
+	"github.com/nickwei84/sms-resource/out/models"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

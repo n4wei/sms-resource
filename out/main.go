@@ -7,9 +7,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/nickwei84/sms-resource/cmds/out/application"
-	"github.com/nickwei84/sms-resource/cmds/out/awsclient"
-	"github.com/nickwei84/sms-resource/cmds/out/models"
+	"github.com/nickwei84/sms-resource/lib/awsclient"
+	"github.com/nickwei84/sms-resource/out/application"
+	"github.com/nickwei84/sms-resource/out/models"
 )
 
 func main() {

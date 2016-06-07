@@ -1,6 +1,6 @@
 package application
 
-import "github.com/nickwei84/sms-resource/cmds/out/models"
+import "github.com/nickwei84/sms-resource/out/models"
 
 //go:generate counterfeiter . SMSService
 type SMSService interface {

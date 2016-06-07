@@ -4,7 +4,7 @@ package applicationfakes
 import (
 	"sync"
 
-	"github.com/nickwei84/sms-resource/cmds/out/application"
+	"github.com/nickwei84/sms-resource/out/application"
 )
 
 type FakeSMSService struct {

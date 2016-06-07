@@ -14,7 +14,7 @@ var _ = Describe("Check", func() {
 
 	BeforeSuite(func() {
 		var err error
-		pathToBuiltBinary, err = gexec.Build("github.com/nickwei84/sms-resource/cmds/check")
+		pathToBuiltBinary, err = gexec.Build("github.com/nickwei84/sms-resource/check")
 		Expect(err).NotTo(HaveOccurred())
 	})
 
