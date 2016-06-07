@@ -6,11 +6,11 @@ import (
 )
 
 type OutputJSON struct {
-	Version  Time
+	Version  Version
 	Metadata []MetadataItem
 }
 
-type Time struct {
+type Version struct {
 	Time time.Time
 }
 

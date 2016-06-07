@@ -48,16 +48,15 @@ func findNewSubscribers(existingSubscribers []string, subscribersFromInput []str
 		return subscribersFromInput
 	}
 
+	existingSubscribersMap := map[string]string{}
+	for _, existingSubscriber := range existingSubscribers {
+		existingSubscribersMap[existingSubscriber] = ""
+	}
+
 	newSubscribers := []string{}
 	for _, subscriberFromInput := range subscribersFromInput {
-		new := true
-		for _, existingSubscriber := range existingSubscribers {
-			if subscriberFromInput == existingSubscriber {
-				new = false
-				break
-			}
-		}
-		if new {
+		_, exist := existingSubscribersMap[subscriberFromInput]
+		if !exist {
 			newSubscribers = append(newSubscribers, subscriberFromInput)
 		}
 	}

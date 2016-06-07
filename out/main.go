@@ -65,7 +65,7 @@ func getStdinInput(config *models.SMSConfig) error {
 
 func generateStdoutOutput() ([]byte, error) {
 	output := models.OutputJSON{
-		Version: models.Time{
+		Version: models.Version{
 			Time: time.Now().UTC(),
 		},
 		Metadata: []models.MetadataItem{},
